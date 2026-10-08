@@ -1,0 +1,1 @@
+import {contextBridge,ipcRenderer} from "electron";contextBridge.exposeInMainWorld("livekit",{getConfig:()=>ipcRenderer.invoke("config"),createToken:(room:string,id:string,name:string)=>ipcRenderer.invoke("token",room,id,name)});
